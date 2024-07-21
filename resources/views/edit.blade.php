@@ -4,9 +4,13 @@
 
 @section('content')
 <table cellpadding="3" cellpadding="5">
+
 <tr>
+    @auth
     <th colspan="4">Editar Servicio</th>
+    @endauth
 </tr>
+
 @if($errors->any())
     <ul>
         @foreach($errors->all() as $error)

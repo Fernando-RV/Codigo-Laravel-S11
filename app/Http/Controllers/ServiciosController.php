@@ -62,4 +62,10 @@ class ServiciosController extends Controller
 	    return redirect()->route('servicios.index')->with('estado','El servicio fue eliminado correctamente');
     }
 
+    public function __construct(){
+        //$this->middleware('auth')->only('create','edit');
+        $this->middleware('auth')->except('index','show');
+
+    }
+
 }

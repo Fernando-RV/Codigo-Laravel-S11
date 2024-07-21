@@ -10,8 +10,9 @@ Route::resource('servicios', 'ServiciosController')
 
 Route::view('/','home')->name('home');
 Route::view('nosotros','nosotros')->name('nosotros');
-Route::get('servicios','App\Http\Controllers\ServiciosController@servicios')->name('servicios');
+Route::resource('servicios','App\Http\Controllers\ServiciosController')->names('servicios');
 /*
+Route::get('servicios','App\Http\Controllers\ServiciosController@servicios')->name('servicios');
 Route::get('servicios','App\Http\Controllers\ServiciosController@index')->name('servicios.index');
 Route::get('servicios/crear','App\Http\Controllers\ServiciosController@create')->name('servicios.create');
 Route::get('servicios/{id}/editar','App\Http\Controllers\ServiciosController@edit')->name('servicios.edit');
@@ -26,8 +27,11 @@ Route::get('servicios/{id}','App\Http\Controllers\ServiciosController@show')->na
 //Route::resource('servicios','App\Http\Controllers\ServiciosController')->except('index','show');
 Route::delete('servicios/{servicio}','App\Http\Controllers\ServiciosController@destroy')->name('servicios.destroy');
 //Route::post('contacto','App\Http\Controllers\ContactoController@store');
-
 */
+
+
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Auth::routes(['register' => true]);
+
 

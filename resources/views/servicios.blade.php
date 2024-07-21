@@ -4,11 +4,13 @@
 
 @section('content')
 
-    <ul>
-        <ul colspan='4'>
+    <tr>
+        @auth
+        <td colspan='4'>
             <a href="{{ route('servicios.create') }}">Nuevo Servicio</a>
-        </ul>   
-    </ul>
+        </td>
+        @endauth   
+    </tr>
 
     <h2>Servicios</h2>
     

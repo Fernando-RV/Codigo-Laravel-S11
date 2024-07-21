@@ -8,6 +8,8 @@
 <h2>{{ $servicio->description }}</h2>
 <h3>{{ $servicio->created_at->diffForHumans() }}</h3>
 
+
+@auth
 <tr>
     <td colspan="2">{{ $servicio->titulo }}
     <a href="{{ route('servicios.edit',$servicio) }}">Editar</a>
@@ -20,5 +22,6 @@
         </form>
     </td>
 </tr>
+@endauth
 
 @endsection
